@@ -74,71 +74,10 @@ Check out the [Oxidized TREX 2014 presentation](http://youtu.be/kBQ_CTUuqeU#t=3h
 
 ## Installation
 
-### Debian and Ubuntu
-
-Debian "buster" or newer and Ubuntu 17.10 (artful) or newer are recommended. On Ubuntu, begin by enabling the `universe` 
-repository (required for libssh2-1-dev):
-
-```shell
-add-apt-repository universe
-```
-
-Install the dependencies:
-
-```shell
-apt-get install ruby ruby-dev libsqlite3-dev libssl-dev pkg-config cmake libssh2-1-dev libicu-dev zlib1g-dev
-```
-
-Finally, install the gems:
-
-```shell
-gem install oxidized
-gem install oxidized-script oxidized-web # If you don't install oxidized-web, ensure "rest" is removed from your Oxidized config.
-```
-
-### CentOS, Oracle Linux, Red Hat Linux
-
-On CentOS 6 / RHEL 6, begin by installing Ruby 2.0 or greater. For Ruby 2.1.2 installation instructions see [Installing Ruby 2.1.2 using RVM](#installing-ruby-212-using-rvm).
-
-If you've installed Ruby 2.0 or greater via a 3rd party package rather than the RVM instructions, additional dependencies will be required:
-
-```shell
-yum install make cmake which sqlite-devel openssl-devel libssh2-devel ruby gcc ruby-devel libicu-devel gcc-c++
-```
-
-RHEL 7 / CentOS 7 will work out of the box with the following package list:
-
-```shell
-yum install make cmake which sqlite-devel openssl-devel libssh2-devel ruby gcc ruby-devel libicu-devel gcc-c++
-```
-
-Now let's install oxidized via Rubygems:
-
-```shell
-gem install oxidized
-gem install oxidized-script oxidized-web # if you don't install oxidized-web, make sure you remove "rest" from your config
-```
-
-### FreeBSD
-
-[Use RVM to install Ruby v2.1.2](#installing-ruby-212-using-rvm), then install all required packages and gems:
-
-```shell
-pkg install cmake pkgconf
-gem install oxidized
-gem install oxidized-script oxidized-web
-```
-
-Oxidized is also available via [FreeBSD ports](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=203374):
-
-```shell
-pkg install rubygem-oxidized rubygem-oxidized-script rubygem-oxidized-web
-```
-
 ### Build from Git
 
 ```shell
-git clone https://github.com/ytti/oxidized.git
+git clone https://github.com/INTERDATA-FR/oxidized.git
 cd oxidized/
 gem install bundler
 rake install
@@ -151,7 +90,7 @@ Currently, Docker Hub automatically builds the master branch as [oxidized/oxidiz
 To build your own, clone git repo:
 
 ```shell
-git clone https://github.com/ytti/oxidized
+git clone https://github.com/INTERDATA-FR/oxidized
 ```
 
 Then, build the container locally (requires docker 17.05.0-ce or higher):
@@ -345,49 +284,6 @@ chown oxidized:oxidized /var/run/oxidized
 ```shell
 update-rc.d oxidized defaults
 ```
-
-## Help
-
-If you need help with Oxidized then we have a few methods you can use to get in touch.
-
-* [Gitter](https://gitter.im/oxidized/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) - You can join the Lobby on gitter to chat to other Oxidized users.
-* [GitHub](https://github.com/ytti/oxidized/) - For help and requests for code changes / updates.
-* [Forum](https://community.librenms.org/c/help/oxidized) - A user forum run by [LibreNMS](https://github.com/librenms/librenms) where you can ask for help and support.
-
-## Help Needed
-
-As things stand right now, `oxidized` is maintained by a single person. A great
-many [contributors](https://github.com/ytti/oxidized/graphs/contributors) have
-helped further the software, however contributions are not the same as ongoing
-owner- and maintainer-ship. It appears that many companies use the software to
-manage their network infrastructure, this is great news! But without additional
-help to maintain the software and put out releases, the future of oxidized
-might be less bright. The current pace of development and the much needed
-refactoring simply are not sustainable if they are to be driven by a single
-person.
-
-## Maintainers
-
-If you would like to be a maintainer for Oxidized then please read through the below and see if it's something you would like to help with. It's not a requirement that you can tick all the boxes below but it helps :)
-
-* Triage on issues, review pull requests and help answer any questions from users.
-* Above average knowledge of the Ruby programming language.
-* Professional experience with both oxidized and some other config backup tool (like rancid).
-* Ability to keep a cool head, and enjoy interaction with end users! :)
-* A desire and passion to help drive `oxidized` towards its `1.x.x` stage of life
-  * Help refactor the code
-  * Rework the core infrastructure
-* Permission from your employer to contribute to open source projects
-
-## YES, I WANT TO HELP
-
-Awesome! Simply send an email to Saku Ytti <saku@ytti.fi>.
-
-## Further reading
-
-Brian Anderson (from Rust fame) wrote an [excellent
-post](http://brson.github.io/2017/04/05/minimally-nice-maintainer) on what it
-means to be a maintainer.
 
 ## License and Copyright
 
